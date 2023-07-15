@@ -49,10 +49,11 @@ const appDataPath = path.join(homedir, 'AppData', 'Local');
 var vDJPath = null;
 // check if the new path exists, if it does, use that one and if not, use the old one
 // if neither exist, we check the ".." above the current directory
-if (fs.existsSync(appDataPath)) {
+// check if it contains History
+if (fs.existsSync(path.join(appDataPath, 'VirtualDJ', 'History'))) {
 	vDJPath = path.join(appDataPath, 'VirtualDJ');
 	console.log('Using new VirtualDJ path');
-} else if(fs.existsSync(documentsPath)) {
+} else if(fs.existsSync(path.join(documentsPath, 'VirtualDJ', 'History'))) {
 	vDJPath = path.join(documentsPath, 'VirtualDJ');
 	console.log('Using old VirtualDJ path');
 } else {

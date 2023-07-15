@@ -7,11 +7,16 @@
     "build": "pkg ./index.js --config ./package.json --compress Brotli"
   },
   "pkg": {
-    "targets": [ "node18-linux-x64", "node18-macos-x64", "node18-win-x64" ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-win-x64"
+    ],
     "outputPath": "dist"
   },
   "dependencies": {
     "discord-rpc": "^4.0.1",
-    "fs-extra": "^10.0.0"
+    "fs-extra": "^10.0.0",
+    "pkg": "^5.8.1"
   }
 }
